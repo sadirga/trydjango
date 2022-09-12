@@ -2,12 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def hey(request):
-    # things we can do
-    # pull data from db
-    # transform data
-    # send email and so on
-    return HttpResponse("HELLO BITCHES")
+def calculate():
+    x = 1
+    y = 2
+    return x
 
-def nothing(request):
-    return HttpResponse("Nothing to see here")
+def hey(request):
+    x = calculate()
+    return render(request,'hey.html',{
+        'name': 'anything'
+    })
